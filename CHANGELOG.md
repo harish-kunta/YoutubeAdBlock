@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4 — store submission candidate
+
+- Disclose the known blank-frame limitation affecting some free-with-ads movies in the popup and store listing.
+- Add direct public support and privacy policy URLs to the listing draft.
+
 ## 1.0.3 — release candidate
 
 - Serialize network-rule updates to prevent stale rules after rapid setting changes.

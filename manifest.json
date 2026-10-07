@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "YouTube Ad & Shorts Controls",
-  "version": "1.0.3",
-  "description": "Unofficial controls for hiding common YouTube ad placements and Shorts. Coverage can change as YouTube changes.",
+  "version": "1.0.4",
+  "description": "Unofficial controls for hiding common YouTube ad placements and Shorts. Coverage and playback compatibility can vary.",
   "minimum_chrome_version": "111",
   "icons": {
     "16": "icons/icon16.png",

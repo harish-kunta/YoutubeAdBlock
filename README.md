@@ -21,6 +21,8 @@ This project is not affiliated with, endorsed by, or sponsored by YouTube or Goo
 
 YouTube can change any of these behaviors. In particular, filtering player responses modifies page behavior and can break playback. If playback fails, pause the extension, reload YouTube, and compare with all other extensions disabled.
 
+Known limitation: some free-with-ads movies may play audio while showing a blank video. Pause the extension and reload if this happens. Regular creator-video playback has rendered in manual checks, but compatibility varies by title and browser.
+
 ## Privacy
 
 The extension does not include analytics, advertising, accounts, or a developer-operated server. It stores only the two user preferences (`enabled` and `hideShorts`) using Chrome's `storage.sync`; Chrome may synchronize those settings according to the user's Chrome account settings. It does not collect or transmit browsing history or video content to the developer. See [`PRIVACY.md`](PRIVACY.md).

@@ -18,4 +18,4 @@ The popup contains a link to GitHub issue forms. Nothing is sent automatically. 
 
 ## Changes and contact
 
-This policy will be updated if the extension's data practices change. For privacy questions, contact the project maintainer through the repository's issue tracker after the public repository URL has been selected. Do not post private account information in public issues.
+This policy will be updated if the extension's data practices change. For privacy questions, contact the project maintainer through the public repository's issue tracker: https://github.com/harish-kunta/YoutubeAdBlock/issues. Do not post private account information in public issues.

@@ -1,6 +1,6 @@
 # Chrome Web Store publishing checklist
 
-Status: **preparation in progress — do not submit until all release gates are checked.** A successful local load does not mean Chrome Web Store approval.
+Status: **submission in progress.** The project owner accepts the known movie playback limitation; disclose it to users and proceed with a Chrome Web Store review submission after account access and assets are ready.
 
 ## Product and policy
 
@@ -21,7 +21,7 @@ Status: **preparation in progress — do not submit until all release gates are 
 - [x] Add automated checks for manifest metadata/permissions and network rule installation/removal; run them in GitHub Actions on pushes and pull requests.
 - [ ] Add automated coverage for settings persistence, SPA navigation, Shorts toggles, and player response handling.
 - [ ] Run manual QA on clean Chrome profiles with no other blockers, then with popular blockers one at a time; include regular videos, ads, movies, Shorts, seek/pause/resume, reload, and playback errors. Capture visual evidence for every pass.
-- [ ] Resolve or explicitly document known playback failures, including Free-with-ads movie rendering. Current manual results include white movie frames, so the extension is **not yet release-verified**.
+- [x] Explicitly disclose known playback failures. Some free-with-ads movies showed white frames in manual QA; the project owner accepts this limitation for the first release.
 - [ ] Verify service-worker startup, install/update/uninstall behavior, storage failures, DNR failures, and paused/enabled state after reload.
 - [ ] Review every permission and explain it in the Dashboard. Keep permissions and network access no broader than necessary.
 - [ ] Inspect the final ZIP: only required runtime assets, no source maps/secrets/test captures/development leftovers; verify package opens and matches the reviewed source.
@@ -47,4 +47,4 @@ Status: **preparation in progress — do not submit until all release gates are 
 
 ## Current release assessment
 
-The repository has an automated package check and release candidate, but it is **not production-ready for public release yet**: playback QA is incomplete and includes a reproducible white-frame movie issue; store screenshots, public policy/contact URLs, and full regression checks are outstanding. Chrome Web Store acceptance is decided by Google and cannot be guaranteed.
+The project owner accepts the known free-with-ads movie rendering limitation. Version `1.0.4` is being prepared for store review; account sign-in, genuine listing screenshots, final privacy fields, and review submission remain outstanding. Chrome Web Store acceptance is decided by Google and cannot be guaranteed.
