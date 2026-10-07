@@ -18,13 +18,14 @@ Status: **preparation in progress — do not submit until all release gates are 
 - [x] Declare a minimum Chrome version compatible with the `world: MAIN` content script setting.
 - [x] Add an opt-in popup feedback link and structured public GitHub issue forms; no reports are sent automatically.
 - [ ] Reassess the main-world `fetch`/XHR response rewriting: it changes page APIs and player data and is the highest playback/regression risk. Test against current YouTube behavior and remove or redesign it if reliable playback cannot be demonstrated.
-- [ ] Add automated checks for manifest validity, rule installation/removal, settings persistence, SPA navigation, Shorts toggles, and player response handling.
+- [x] Add automated checks for manifest metadata/permissions and network rule installation/removal; run them in GitHub Actions on pushes and pull requests.
+- [ ] Add automated coverage for settings persistence, SPA navigation, Shorts toggles, and player response handling.
 - [ ] Run manual QA on clean Chrome profiles with no other blockers, then with popular blockers one at a time; include regular videos, ads, movies, Shorts, seek/pause/resume, reload, and playback errors. Capture visual evidence for every pass.
 - [ ] Resolve or explicitly document known playback failures, including Free-with-ads movie rendering. Current manual results include white movie frames, so the extension is **not yet release-verified**.
 - [ ] Verify service-worker startup, install/update/uninstall behavior, storage failures, DNR failures, and paused/enabled state after reload.
 - [ ] Review every permission and explain it in the Dashboard. Keep permissions and network access no broader than necessary.
 - [ ] Inspect the final ZIP: only required runtime assets, no source maps/secrets/test captures/development leftovers; verify package opens and matches the reviewed source.
-- [ ] Increment `version` for every uploaded package. Version `1.0.2` is currently prepared locally.
+- [ ] Increment `version` for every uploaded package. Version `1.0.3` is the current local release candidate; it has not been submitted.
 
 ## Store listing and account
 
@@ -46,4 +47,4 @@ Status: **preparation in progress — do not submit until all release gates are 
 
 ## Current release assessment
 
-The repository is better prepared for review, but it is **not production-ready for public release yet**: playback QA is incomplete and includes a reproducible white-frame movie issue; store screenshots, public policy/contact URLs, and full regression checks are outstanding. Chrome Web Store acceptance is decided by Google and cannot be guaranteed.
+The repository has an automated package check and release candidate, but it is **not production-ready for public release yet**: playback QA is incomplete and includes a reproducible white-frame movie issue; store screenshots, public policy/contact URLs, and full regression checks are outstanding. Chrome Web Store acceptance is decided by Google and cannot be guaranteed.
