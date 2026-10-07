@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.9 — clearer privacy disclosures and store assets
+
+- Explain local YouTube page processing in the popup, privacy policy, and store listing.
+- Add a direct privacy-policy link to the popup.
+- Prepare the required 440x280 Chrome Web Store promotional tile.
+
 ## 1.0.8 — YouTube ad blocker icon
 
 - Combine a red video-player cue with a crossed-out AD badge to communicate the site and purpose at a glance.

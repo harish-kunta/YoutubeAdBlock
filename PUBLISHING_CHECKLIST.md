@@ -1,50 +1,58 @@
-# Chrome Web Store publishing checklist
+# Chrome Web Store submission audit and checklist
 
-Status: **submission in progress.** The project owner accepts the known movie playback limitation; disclose it to users and proceed with a Chrome Web Store review submission after account access and assets are ready.
+Last known dashboard state: version **1.0.8** was submitted for first review on **October 7, 2026**, with automatic publishing selected. A local replacement build **1.0.9** now includes stronger privacy disclosures. Check the dashboard and publisher email before making release decisions; pending review means the listing is not yet public.
 
-## Product and policy
+## Findings from the current submission
 
-- [ ] Confirm that the extension complies with the current Chrome Web Store Developer Program Policies and Developer Agreement.
-- [ ] Review YouTube's current Terms of Service and decide whether to distribute a tool that hides or modifies YouTube ads. YouTube's terms restrict altering or modifying parts of its service except where permitted. This is a material policy/legal risk; get qualified advice if needed.
-- [ ] Do not promise that ads will “never” play or that all movies/videos will work. Describe the actual limited, changeable behavior.
-- [ ] Keep the unofficial/non-affiliation disclosure in the listing and extension UI; avoid YouTube logos and branding that implies endorsement.
-- [ ] Confirm the privacy policy accurately matches the shipped code and is hosted at a stable, public HTTPS URL.
-- [ ] Select and publish a support contact/repository URL; replace placeholders in the policy and README.
+### Fixed in the local 1.0.9 source
 
-## Code and package
+- [x] The privacy policy now explains that selected YouTube page elements, request URLs, and player-response fields are processed locally to provide the advertised controls.
+- [x] The popup now gives users a visible local-processing disclosure and a direct privacy-policy link.
+- [x] The listing and README now describe local page processing, Chrome Sync preferences, and optional user-submitted GitHub reports consistently.
+- [x] The privacy policy states the extension's Limited Use commitments and distinguishes optional GitHub reports from automatic data transmission.
+- [x] The privacy policy is hosted as a publicly readable GitHub Markdown page. GitHub renders it as a normal HTTPS webpage, which is suitable for the store's privacy-policy link field.
 
-- [x] Use Manifest V3 and scope host access to YouTube.
-- [x] Add 16, 48, and 128 pixel PNG icons.
-- [x] Declare a minimum Chrome version compatible with the `world: MAIN` content script setting.
-- [x] Add an opt-in popup feedback link and structured public GitHub issue forms; no reports are sent automatically.
-- [ ] Reassess the main-world `fetch`/XHR response rewriting: it changes page APIs and player data and is the highest playback/regression risk. Test against current YouTube behavior and remove or redesign it if reliable playback cannot be demonstrated.
-- [x] Add automated checks for manifest metadata/permissions and network rule installation/removal; run them in GitHub Actions on pushes and pull requests.
-- [ ] Add automated coverage for settings persistence, SPA navigation, Shorts toggles, and player response handling.
-- [ ] Run manual QA on clean Chrome profiles with no other blockers, then with popular blockers one at a time; include regular videos, ads, movies, Shorts, seek/pause/resume, reload, and playback errors. Capture visual evidence for every pass.
-- [x] Explicitly disclose known playback failures. Some free-with-ads movies showed white frames in manual QA; the project owner accepts this limitation for the first release.
-- [ ] Verify service-worker startup, install/update/uninstall behavior, storage failures, DNR failures, and paused/enabled state after reload.
-- [ ] Review every permission and explain it in the Dashboard. Keep permissions and network access no broader than necessary.
-- [ ] Inspect the final ZIP: only required runtime assets, no source maps/secrets/test captures/development leftovers; verify package opens and matches the reviewed source.
-- [ ] Increment `version` for every uploaded package. Version `1.0.3` is the current local release candidate; it has not been submitted.
+### Still needs attention in the Developer Dashboard
 
-## Store listing and account
+- [ ] Review the Privacy practices data-use selections against the new disclosure. This extension locally processes YouTube page content and browsing activity as required for the disclosed features; it does not transmit that page data to the developer. Ensure the selected data categories and Limited Use certifications describe local processing truthfully and match `PRIVACY.md` and the shipped build. Do not describe this as “no data handling.”
+- [ ] Replace the uploaded designed mockup `dist/store-screenshot-1.png` with at least one screenshot of the actual extension running in Chrome. Store screenshots should show the real user experience and match the submitted build.
+- [ ] Confirm that the listing has the required 440x280 small promotional tile, then upload `store-assets/small-promo-440x280.png` if it is missing. The prior submission record only confirms a store icon and a designed screenshot.
+- [ ] Confirm the store's privacy-policy URL points to `https://github.com/harish-kunta/YoutubeAdBlock/blob/main/PRIVACY.md` and that the homepage and support URLs still work.
+- [ ] Confirm the listing description includes the local page-processing disclosure from `STORE_LISTING.md`, the unofficial/non-affiliation wording, and the known movie playback limitation. Do not promise that ads will never play or that every video will work.
+- [ ] Submit replacement package 1.0.9 after updating the dashboard's privacy fields and real screenshot. This may restart review; inspect the dashboard's current state before replacing the pending 1.0.8 submission.
 
-- [ ] Register/complete the Chrome Web Store developer account and satisfy current account security/verification requirements.
-- [ ] Prepare final title, short and detailed descriptions, category, language, support URL, and privacy policy URL; see [`STORE_LISTING.md`](STORE_LISTING.md).
-- [ ] Capture genuine screenshots of the final build and prepare any promotional images using current image specifications. (The updated popup has been visually checked; a screenshot file still needs to be captured from Chrome for the listing.)
-- [ ] Complete the Privacy practices tab: single purpose, data collection/use/sharing disclosures, Limited Use certification, and a justification for each permission. Ensure it agrees with `PRIVACY.md` and actual behavior.
-- [ ] Set distribution visibility, regions, and pricing; identify the publisher/developer name shown to users.
-- [ ] Provide reviewer instructions and a test account only if needed; do not include personal credentials unnecessarily.
-- [ ] Upload the ZIP to the Developer Dashboard, inspect the package and listing preview, then submit for review. Consider deferred publishing until review is complete and the release has been rechecked.
-- [ ] Monitor review status and developer email; address rejection feedback and increment the version when uploading a corrected package.
+## Package and code review
 
-## After release
+- [x] Manifest V3; host access is limited to `https://www.youtube.com/*`.
+- [x] Declared `storage` and `declarativeNetRequest` permissions are used by the implementation and have justifications in `STORE_LISTING.md`.
+- [x] The package has 16, 48, and 128 pixel icons; package script places `manifest.json` at the ZIP root and includes only runtime files.
+- [x] Prepared `dist/youtube-ad-shorts-controls-1.0.9.zip` and inspected its file list; `manifest.json` is at the ZIP root. `package.sh` was not run in this audit, so its automated tests have not been rerun here.
+- [ ] Confirm the dashboard's remote-code declaration says no remote code, and verify the uploaded ZIP contains no externally hosted executable code, obfuscation, secrets, or development artifacts.
+- [ ] Re-run the browser QA matrix in `MANUAL_QA.md` against the exact package. In particular, visually verify regular-video playback, pre-roll and mid-roll behavior, reload/toggle recovery, Shorts settings, and the known free-movie blank-frame case. The current manual notes show unresolved movie playback failures.
+- [ ] Confirm the Dashboard single-purpose statement, permission justifications, privacy disclosures, and listing text all match the exact uploaded version.
 
-- [ ] Monitor user reports and Chrome Web Store reviews; provide a public issue/support path.
-- [ ] Track YouTube page changes and Chrome API changes; keep filters narrow and remove broken rules quickly.
-- [ ] Maintain a changelog, security contact, and a process for responding to vulnerability reports.
-- [ ] Re-run the release checklist and update privacy disclosures before any change to permissions or data handling.
+## Risks to understand before continuing
 
-## Current release assessment
+- Chrome Web Store approval is not guaranteed. Chrome's current policies emphasize accurate disclosures, narrow permissions, useful working features, non-misleading listings, and non-obfuscated, reviewable code.
+- YouTube's Terms of Service restrict modifying or interfering with the service. This extension modifies selected YouTube player-response data and request handling, so there is a platform-terms risk separate from Chrome Web Store approval. This checklist is not legal advice.
+- Free-with-ads movies have shown blank video frames in manual checks, sometimes even while the extension was paused. This limitation is disclosed in the UI and listing, but it remains a significant quality risk.
 
-The project owner accepts the known free-with-ads movie rendering limitation. Version `1.0.4` is being prepared for store review; account sign-in, genuine listing screenshots, final privacy fields, and review submission remain outstanding. Chrome Web Store acceptance is decided by Google and cannot be guaranteed.
+## Frequent submission mistakes to avoid
+
+- Privacy dashboard, privacy policy, store listing, and actual code describe different data practices.
+- Treating local page processing as “no data handling” or failing to disclose what page data the extension processes.
+- Requesting broad host or sensitive permissions without a direct feature-based justification.
+- Shipping remote executable code in Manifest V3, obfuscated code, or code that is unnecessarily difficult to review.
+- Uploading inaccurate screenshots, missing required image assets, or promotional claims the extension cannot substantiate.
+- Overpromising functionality, omitting known breakage, or submitting with core flows that fail.
+- Keyword stuffing, misleading affiliation/branding, deceptive install flows, duplicate extensions, or manipulated reviews/ratings.
+- Missing review emails or leaving an item pending/rejected without checking the dashboard's status details.
+
+## Official references
+
+- [Chrome Web Store privacy policies](https://developer.chrome.com/docs/webstore/program-policies/privacy)
+- [Chrome Web Store 2026 policy update](https://developer.chrome.com/blog/cws-policy-updates-2026)
+- [Fill out the privacy fields](https://developer.chrome.com/docs/webstore/cws-dashboard-privacy)
+- [Chrome Web Store policy troubleshooting](https://developer.chrome.com/docs/webstore/troubleshooting)
+- [Screenshot and image requirements](https://developer.chrome.com/docs/webstore/images)
+- [YouTube Terms of Service](https://www.youtube.com/t/terms)

@@ -25,7 +25,7 @@ Known limitation: some free-with-ads movies may play audio while showing a blank
 
 ## Privacy
 
-The extension does not include analytics, advertising, accounts, or a developer-operated server. It stores only the two user preferences (`enabled` and `hideShorts`) using Chrome's `storage.sync`; Chrome may synchronize those settings according to the user's Chrome account settings. It does not collect or transmit browsing history or video content to the developer. See [`PRIVACY.md`](PRIVACY.md).
+To apply its controls, the extension processes selected YouTube page elements, request URLs, and player-response data locally in the browser. It does not transmit this page data to the developer. It stores only the two user preferences (`enabled` and `hideShorts`) using Chrome's `storage.sync`; Chrome may synchronize those settings according to the user's Chrome account settings. Nothing is sent to GitHub unless the user chooses to submit a feedback report, which may be public. See [`PRIVACY.md`](PRIVACY.md).
 
 ## Open source and contributions
 
