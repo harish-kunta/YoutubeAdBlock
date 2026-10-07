@@ -22,34 +22,28 @@ def render_icon(size: int) -> Image.Image:
         return tuple(round(value * SCALE) for value in coords)
 
     draw.rounded_rectangle(box((4, 4, 124, 124)), radius=30 * SCALE, fill="#101827")
-    # Make the blocked object itself explicit: a high-contrast AD label, crossed
-    # out with the familiar prohibition mark. The geometry stays legible at 16 px.
-    draw.rounded_rectangle(box((18, 35, 110, 93)), radius=9 * SCALE, fill="#F8FAFC")
+    # Red video player cues YouTube; the crossed-out AD badge makes the function explicit.
+    draw.rounded_rectangle(box((20, 29, 108, 91)), radius=13 * SCALE, fill="#E53243")
+    draw.polygon([box((53, 42)), box((53, 78)), box((82, 60))], fill="#FFFFFF")
+
+    badge = box((69, 66, 116, 113))
+    draw.ellipse(badge, fill="#F8FAFC", outline="#101827", width=3 * SCALE)
     font_paths = (
         "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
     )
-    font = None
-    for font_path in font_paths:
-        try:
-            font = ImageFont.truetype(font_path, 43 * SCALE)
-            break
-        except OSError:
-            continue
-    if font is None:
-        font = ImageFont.load_default(size=43 * SCALE)
-    label = "AD"
-    bounds = draw.textbbox((0, 0), label, font=font)
-    label_width = bounds[2] - bounds[0]
-    label_height = bounds[3] - bounds[1]
-    draw.text(
-        ((side - label_width) / 2 - bounds[0], (side - label_height) / 2 - bounds[1]),
-        label, font=font, fill="#101827",
+    try:
+        font = ImageFont.truetype(font_paths[0], 17 * SCALE)
+    except OSError:
+        font = ImageFont.truetype(font_paths[1], 17 * SCALE)
+    bounds = draw.textbbox((0, 0), "AD", font=font)
+    badge_center = ((69 + 116) * SCALE / 2, (66 + 113) * SCALE / 2)
+    label_origin = (
+        badge_center[0] - (bounds[2] - bounds[0]) / 2 - bounds[0],
+        badge_center[1] - (bounds[3] - bounds[1]) / 2 - bounds[1],
     )
-
-    red = "#E53243"
-    draw.ellipse(box((13, 13, 115, 115)), outline=red, width=8 * SCALE)
-    draw.line([box((35, 94)), box((94, 35))], fill=red, width=10 * SCALE)
+    draw.text(label_origin, "AD", font=font, fill="#E53243")
+    draw.line([box((77, 104)), box((107, 74))], fill="#E53243", width=5 * SCALE)
 
     resampling = getattr(Image, "Resampling", Image).LANCZOS
     return image.resize((size, size), resampling)

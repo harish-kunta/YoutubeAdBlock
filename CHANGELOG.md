@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.8 — YouTube ad blocker icon
+
+- Combine a red video-player cue with a crossed-out AD badge to communicate the site and purpose at a glance.
+
 ## 1.0.7 — ad blocker icon redesign
 
 - Replace the video-and-shield mark with a clear crossed-out AD label designed to read at toolbar size.
