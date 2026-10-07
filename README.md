@@ -35,7 +35,8 @@ The project is released under the MIT License. See [`LICENSE`](LICENSE). Contrib
 - `MANUAL_QA.md` — current manual test results and remaining cases.
 - `PUBLISHING_CHECKLIST.md` — Chrome Web Store preparation and release gates.
 - `STORE_LISTING.md` — draft listing text and assets still needed.
+- `CHANGELOG.md` — release history.
 
 ## Support
 
-Report a bug through the repository's issue tracker (once published). Include Chrome version, extension version, YouTube URL type (regular video, Shorts, or movie), whether other blockers are installed, and steps to reproduce. Never include passwords, cookies, or private data.
+Use **Report a problem or share feedback** in the popup to open a guided GitHub form. Nothing is sent unless the user chooses to submit the form. Reports are public; never include passwords, cookies, account details, or private video links. See [`PRIVACY.md`](PRIVACY.md).

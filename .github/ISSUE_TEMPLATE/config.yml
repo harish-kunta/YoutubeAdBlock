@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Privacy or security concern
+    url: https://github.com/harish-kunta/YoutubeAdBlock/security/advisories/new
+    about: Please report sensitive security issues privately instead of posting them publicly.

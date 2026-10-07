@@ -1,0 +1,79 @@
+name: Playback or ad blocking report
+description: Tell the maintainer what stopped working on YouTube.
+title: "[Report] "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Thanks for helping improve the extension. This form is submitted to GitHub only when you choose to submit it. Do not include cookies, passwords, account details, or private video links.
+  - type: dropdown
+    id: issue_kind
+    attributes:
+      label: What happened?
+      options:
+        - An ad played
+        - A blank or white video frame
+        - Video would not start or stopped
+        - Shorts were not hidden
+        - An ad placeholder or empty space remained
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: chrome_version
+    attributes:
+      label: Chrome version
+      description: Find this at chrome://settings/help.
+      placeholder: e.g. Chrome 140
+    validations:
+      required: true
+  - type: input
+    id: extension_version
+    attributes:
+      label: Extension version
+      description: Find this at chrome://extensions.
+      placeholder: e.g. 1.0.1
+    validations:
+      required: true
+  - type: dropdown
+    id: youtube_surface
+    attributes:
+      label: YouTube page type
+      options:
+        - Regular video
+        - Free movie or show
+        - Shorts
+        - Home, search, or subscriptions page
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: blocker_state
+    attributes:
+      label: Was this extension enabled?
+      options:
+        - Yes
+        - No
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: other_extensions
+    attributes:
+      label: Other ad blockers or privacy extensions
+      description: List them, or write “none”. This helps isolate conflicts.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps and what you observed
+      description: Include how long you waited and whether audio, video frames, or an ad were visible.
+      placeholder: "1. Open a regular video…\n2. Wait…\n3. Observe…"
+    validations:
+      required: true
+  - type: textarea
+    id: optional_url
+    attributes:
+      label: Optional public video URL
+      description: Only share a public URL that you are comfortable posting publicly.

@@ -12,6 +12,10 @@ The extension stores two settings, `enabled` and `hideShorts`, using Chrome's `s
 
 The extension runs on `https://www.youtube.com/*`. It locally inspects YouTube page elements and, while enabled, applies its declared request filters and removes selected ad-related fields from YouTube player responses. This processing is performed in the browser to provide the extension's disclosed features; the extension does not log or export the page data.
 
+## Optional feedback
+
+The popup contains a link to GitHub issue forms. Nothing is sent automatically. If the user chooses to open and submit a report, the information they enter is sent to GitHub and may be publicly visible under GitHub's terms and privacy policy. Reports should not contain passwords, cookies, account details, or private video links.
+
 ## Changes and contact
 
 This policy will be updated if the extension's data practices change. For privacy questions, contact the project maintainer through the repository's issue tracker after the public repository URL has been selected. Do not post private account information in public issues.

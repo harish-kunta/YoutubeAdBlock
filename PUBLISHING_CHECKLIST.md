@@ -16,6 +16,7 @@ Status: **preparation in progress — do not submit until all release gates are 
 - [x] Use Manifest V3 and scope host access to YouTube.
 - [x] Add 16, 48, and 128 pixel PNG icons.
 - [x] Declare a minimum Chrome version compatible with the `world: MAIN` content script setting.
+- [x] Add an opt-in popup feedback link and structured public GitHub issue forms; no reports are sent automatically.
 - [ ] Reassess the main-world `fetch`/XHR response rewriting: it changes page APIs and player data and is the highest playback/regression risk. Test against current YouTube behavior and remove or redesign it if reliable playback cannot be demonstrated.
 - [ ] Add automated checks for manifest validity, rule installation/removal, settings persistence, SPA navigation, Shorts toggles, and player response handling.
 - [ ] Run manual QA on clean Chrome profiles with no other blockers, then with popular blockers one at a time; include regular videos, ads, movies, Shorts, seek/pause/resume, reload, and playback errors. Capture visual evidence for every pass.
@@ -23,7 +24,7 @@ Status: **preparation in progress — do not submit until all release gates are 
 - [ ] Verify service-worker startup, install/update/uninstall behavior, storage failures, DNR failures, and paused/enabled state after reload.
 - [ ] Review every permission and explain it in the Dashboard. Keep permissions and network access no broader than necessary.
 - [ ] Inspect the final ZIP: only required runtime assets, no source maps/secrets/test captures/development leftovers; verify package opens and matches the reviewed source.
-- [ ] Increment `version` for every uploaded package. Version `1.0.1` is currently prepared locally.
+- [ ] Increment `version` for every uploaded package. Version `1.0.2` is currently prepared locally.
 
 ## Store listing and account
 

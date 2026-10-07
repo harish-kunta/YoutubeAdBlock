@@ -16,10 +16,11 @@ An unofficial, open-source extension with controls for common YouTube ad placeme
 - Attempt to skip some in-player ads.
 - Hide Shorts shelves, links, cards, and player surfaces with a separate setting.
 - Pause ad handling independently from Shorts hiding.
+- Open a guided feedback form when the user chooses to report a problem.
 
 Ad delivery and YouTube's page structure change over time. Coverage is not guaranteed, and filtering can affect playback. The extension runs only on YouTube and stores the two preferences using Chrome Sync. It does not collect analytics or send browsing activity to the developer.
 
-This extension is not affiliated with, endorsed by, or sponsored by YouTube or Google. YouTube is a trademark of Google LLC.
+Nothing is sent automatically. User-submitted feedback goes to GitHub and may be public. This extension is not affiliated with, endorsed by, or sponsored by YouTube or Google. YouTube is a trademark of Google LLC.
 
 ## Single purpose
 
