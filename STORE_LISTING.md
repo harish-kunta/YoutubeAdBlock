@@ -43,7 +43,7 @@ Provide user controls to hide common YouTube ad placements and Shorts entry poin
 
 ## Required listing assets (not included in the extension ZIP)
 
-- At least one screenshot showing the actual user experience of the final release build. The current `dist/store-screenshot-1.png` is a designed mockup, not a genuine Chrome screenshot; replace it before relying on it as the listing screenshot.
+- Screenshot: `store-assets/store-screenshot-1280x800.png`. It uses the actual extension popup captured in Chrome, cropped to remove the signed-in account, recommendations, and browser profile area, on a neutral 1280x800 canvas.
 - Required 440x280 small promotional tile: `store-assets/small-promo-440x280.png`. Upload it if it is not already present in the Developer Dashboard.
 - Use current Chrome Web Store image dimensions and create any optional promotional images.
 - Use only original artwork or assets with documented permission; do not use YouTube's logo as the extension's icon.

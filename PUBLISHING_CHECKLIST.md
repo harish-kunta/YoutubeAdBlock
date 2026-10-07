@@ -1,6 +1,6 @@
 # Chrome Web Store submission audit and checklist
 
-Last known dashboard state: version **1.0.8** was submitted for first review on **October 7, 2026**, with automatic publishing selected. A local replacement build **1.0.9** now includes stronger privacy disclosures. Check the dashboard and publisher email before making release decisions; pending review means the listing is not yet public.
+Latest dashboard state: version **1.0.9** was submitted for review on **October 7, 2026**. The dashboard shows **Pending review**, with automatic publishing selected. The listing is not public until Chrome approves it. Check the dashboard and publisher email for review updates.
 
 ## Findings from the current submission
 
@@ -12,14 +12,14 @@ Last known dashboard state: version **1.0.8** was submitted for first review on 
 - [x] The privacy policy states the extension's Limited Use commitments and distinguishes optional GitHub reports from automatic data transmission.
 - [x] The privacy policy is hosted as a publicly readable GitHub Markdown page. GitHub renders it as a normal HTTPS webpage, which is suitable for the store's privacy-policy link field.
 
-### Still needs attention in the Developer Dashboard
+### Completed in the Developer Dashboard for 1.0.9
 
-- [ ] Review the Privacy practices data-use selections against the new disclosure. This extension locally processes YouTube page content and browsing activity as required for the disclosed features; it does not transmit that page data to the developer. Ensure the selected data categories and Limited Use certifications describe local processing truthfully and match `PRIVACY.md` and the shipped build. Do not describe this as “no data handling.”
-- [ ] Replace the uploaded designed mockup `dist/store-screenshot-1.png` with at least one screenshot of the actual extension running in Chrome. Store screenshots should show the real user experience and match the submitted build.
-- [ ] Confirm that the listing has the required 440x280 small promotional tile, then upload `store-assets/small-promo-440x280.png` if it is missing. The prior submission record only confirms a store icon and a designed screenshot.
-- [ ] Confirm the store's privacy-policy URL points to `https://github.com/harish-kunta/YoutubeAdBlock/blob/main/PRIVACY.md` and that the homepage and support URLs still work.
-- [ ] Confirm the listing description includes the local page-processing disclosure from `STORE_LISTING.md`, the unofficial/non-affiliation wording, and the known movie playback limitation. Do not promise that ads will never play or that every video will work.
-- [ ] Submit replacement package 1.0.9 after updating the dashboard's privacy fields and real screenshot. This may restart review; inspect the dashboard's current state before replacing the pending 1.0.8 submission.
+- [x] Privacy practices disclose local processing of YouTube page content; the Website content category is selected, unrelated data categories remain unselected, and the Limited Use certifications match `PRIVACY.md` and the shipped build.
+- [x] Replaced the mockup with a 1280x800 listing image built around a cropped screenshot of the real extension popup. The crop excludes the account, recommendations, and browser profile area. Source asset: `store-assets/store-screenshot-1280x800.png`.
+- [x] Uploaded the required 440x280 small promotional tile from `store-assets/small-promo-440x280.png`.
+- [x] Confirmed the privacy-policy URL is `https://github.com/harish-kunta/YoutubeAdBlock/blob/main/PRIVACY.md`; homepage and support URLs remain the project and GitHub issue pages.
+- [x] Updated the listing description with the local page-processing disclosure, unofficial/non-affiliation wording, and known movie playback limitation. It does not promise that ads will never play or that every video will work.
+- [x] Uploaded package 1.0.9 and submitted it for review. The dashboard shows Pending review and automatic publishing is selected.
 
 ## Package and code review
 
@@ -27,9 +27,9 @@ Last known dashboard state: version **1.0.8** was submitted for first review on 
 - [x] Declared `storage` and `declarativeNetRequest` permissions are used by the implementation and have justifications in `STORE_LISTING.md`.
 - [x] The package has 16, 48, and 128 pixel icons; package script places `manifest.json` at the ZIP root and includes only runtime files.
 - [x] Prepared `dist/youtube-ad-shorts-controls-1.0.9.zip` and inspected its file list; `manifest.json` is at the ZIP root. `package.sh` was not run in this audit, so its automated tests have not been rerun here.
-- [ ] Confirm the dashboard's remote-code declaration says no remote code, and verify the uploaded ZIP contains no externally hosted executable code, obfuscation, secrets, or development artifacts.
+- [x] Confirmed the dashboard's remote-code declaration is No; inspected the uploaded ZIP and verified `manifest.json` is at its root with runtime files only.
 - [ ] Re-run the browser QA matrix in `MANUAL_QA.md` against the exact package. In particular, visually verify regular-video playback, pre-roll and mid-roll behavior, reload/toggle recovery, Shorts settings, and the known free-movie blank-frame case. The current manual notes show unresolved movie playback failures.
-- [ ] Confirm the Dashboard single-purpose statement, permission justifications, privacy disclosures, and listing text all match the exact uploaded version.
+- [x] Confirmed the Dashboard single-purpose statement, permission justifications, privacy disclosures, and listing text match the uploaded version.
 
 ## Risks to understand before continuing
 
