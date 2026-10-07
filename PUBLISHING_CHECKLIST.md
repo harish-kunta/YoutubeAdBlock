@@ -31,7 +31,7 @@ Status: **submission in progress.** The project owner accepts the known movie pl
 
 - [ ] Register/complete the Chrome Web Store developer account and satisfy current account security/verification requirements.
 - [ ] Prepare final title, short and detailed descriptions, category, language, support URL, and privacy policy URL; see [`STORE_LISTING.md`](STORE_LISTING.md).
-- [ ] Capture genuine screenshots of the final build and prepare any promotional images using current image specifications.
+- [ ] Capture genuine screenshots of the final build and prepare any promotional images using current image specifications. (The updated popup has been visually checked; a screenshot file still needs to be captured from Chrome for the listing.)
 - [ ] Complete the Privacy practices tab: single purpose, data collection/use/sharing disclosures, Limited Use certification, and a justification for each permission. Ensure it agrees with `PRIVACY.md` and actual behavior.
 - [ ] Set distribution visibility, regions, and pricing; identify the publisher/developer name shown to users.
 - [ ] Provide reviewer instructions and a test account only if needed; do not include personal credentials unnecessarily.
