@@ -11,7 +11,7 @@ body { width: 320px; margin: 0; }
 .brand-row { display: flex; align-items: center; gap: 12px; }
 .brand-mark {
   display: block; width: 42px; height: 42px; border-radius: 13px;
-  box-shadow: 0 6px 18px #37c9a633;
+  box-shadow: 0 6px 18px #e52d3c33;
 }
 h1 { margin: 0; font-size: 16px; letter-spacing: -0.3px; }
 .subtitle { margin: 4px 0 0; color: #999ba3; font-size: 12px; }

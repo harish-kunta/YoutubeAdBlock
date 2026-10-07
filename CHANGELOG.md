@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.6 — red icon palette
+
+- Change the video and shield accents to red based on user feedback, while retaining the original framed-screen silhouette.
+
 ## 1.0.5 — refreshed extension identity
 
 - Replace the generic red play icon with an original navy, teal video-and-shield mark.
