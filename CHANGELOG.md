@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.7 — ad blocker icon redesign
+
+- Replace the video-and-shield mark with a clear crossed-out AD label designed to read at toolbar size.
+
 ## 1.0.6 — red icon palette
 
 - Change the video and shield accents to red based on user feedback, while retaining the original framed-screen silhouette.
