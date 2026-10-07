@@ -10,9 +10,8 @@ body { width: 320px; margin: 0; }
 .panel { padding: 22px; }
 .brand-row { display: flex; align-items: center; gap: 12px; }
 .brand-mark {
-  display: grid; place-items: center; width: 42px; height: 42px;
-  border-radius: 13px; background: #ff3040; color: white; font-size: 17px;
-  box-shadow: 0 6px 18px #ff304033;
+  display: block; width: 42px; height: 42px; border-radius: 13px;
+  box-shadow: 0 6px 18px #37c9a633;
 }
 h1 { margin: 0; font-size: 16px; letter-spacing: -0.3px; }
 .subtitle { margin: 4px 0 0; color: #999ba3; font-size: 12px; }

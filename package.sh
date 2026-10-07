@@ -24,5 +24,6 @@ console.log(`Manifest ${manifest.version} and package files validated.`);
 
 mkdir -p dist
 zip -q -r "dist/youtube-ad-shorts-controls-$(node -p 'require("./manifest.json").version').zip" \
-  manifest.json background.js content.js player-filter.js styles.css popup.html popup.js popup.css icons
+  manifest.json background.js content.js player-filter.js styles.css popup.html popup.js popup.css \
+  icons/icon16.png icons/icon48.png icons/icon128.png
 echo "Created the Chrome Web Store package in dist/."

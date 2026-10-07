@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.5 — refreshed extension identity
+
+- Replace the generic red play icon with an original navy, teal video-and-shield mark.
+- Use the same mark in the popup and the Chrome toolbar/store icon sizes.
+
 ## 1.0.4 — store submission candidate
 
 - Disclose the known blank-frame limitation affecting some free-with-ads movies in the popup and store listing.
