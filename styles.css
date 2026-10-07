@@ -1,0 +1,50 @@
+/* Hide common page ad containers while the extension is enabled. */
+.yta-helper-enabled ytd-display-ad-renderer,
+.yta-helper-enabled ytd-promoted-sparkles-web-renderer,
+.yta-helper-enabled ytd-promoted-video-renderer,
+.yta-helper-enabled ytd-in-feed-ad-layout-renderer,
+.yta-helper-enabled ytd-ad-slot-renderer,
+.yta-helper-enabled ytd-rich-item-renderer[is-ad],
+.yta-helper-enabled ytd-video-renderer[is-ad],
+.yta-helper-enabled ytd-compact-video-renderer[is-ad],
+/* The ad itself can be hidden while its feed-card wrapper still reserves space. */
+.yta-helper-enabled ytd-rich-item-renderer:has(ytd-ad-slot-renderer),
+.yta-helper-enabled ytd-rich-item-renderer:has(ytd-display-ad-renderer),
+.yta-helper-enabled ytd-rich-item-renderer:has(ytd-promoted-sparkles-web-renderer),
+.yta-helper-enabled ytd-rich-item-renderer:has(ytd-in-feed-ad-layout-renderer),
+.yta-helper-enabled ytd-video-renderer:has(ytd-promoted-sparkles-web-renderer),
+.yta-helper-enabled ytd-compact-video-renderer:has(ytd-promoted-video-renderer),
+.yta-helper-enabled #player-ads,
+.yta-helper-enabled .video-ads,
+.yta-helper-enabled .ytp-ad-module,
+.yta-helper-enabled .ytp-ad-overlay-container,
+.yta-helper-enabled .ytp-ad-player-overlay,
+.yta-helper-enabled .ytp-ad-overlay-image,
+.yta-helper-enabled .ytp-ad-overlay-close-container,
+.yta-helper-enabled .ytp-ad-text-overlay,
+.yta-helper-enabled ytd-companion-slot-renderer,
+.yta-helper-enabled ytd-action-companion-ad-renderer,
+.yta-helper-enabled #masthead-ad,
+.yta-helper-enabled .ytd-action-companion-ad-renderer,
+.yta-helper-enabled ytd-banner-promo-renderer {
+  display: none !important;
+}
+
+/* Hide Shorts entry points, shelves, and cards across YouTube surfaces. */
+.yta-shorts-hidden ytd-reel-shelf-renderer,
+.yta-shorts-hidden ytd-rich-shelf-renderer[is-shorts],
+.yta-shorts-hidden ytd-rich-shelf-renderer:has(a[href*="/shorts"]),
+.yta-shorts-hidden ytd-shorts,
+.yta-shorts-hidden ytd-shorts-player,
+.yta-shorts-hidden ytd-reel-video-renderer,
+.yta-shorts-hidden ytd-rich-item-renderer:has(a[href*="/shorts"]),
+.yta-shorts-hidden ytd-video-renderer:has(a[href*="/shorts"]),
+.yta-shorts-hidden ytd-grid-video-renderer:has(a[href*="/shorts"]),
+.yta-shorts-hidden ytd-compact-video-renderer:has(a[href*="/shorts"]),
+.yta-shorts-hidden ytd-guide-entry-renderer:has(a[href*="/shorts"]),
+.yta-shorts-hidden ytd-mini-guide-entry-renderer:has(a[href*="/shorts"]),
+.yta-shorts-hidden ytm-video-with-context-renderer:has(a[href*="/shorts"]),
+.yta-shorts-hidden a[href*="/shorts"],
+.yta-shorts-hidden [data-yta-hidden-shorts] {
+  display: none !important;
+}

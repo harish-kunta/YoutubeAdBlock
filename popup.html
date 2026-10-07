@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YouTube Ad &amp; Shorts Controls</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="panel">
+      <div class="brand-row">
+        <div class="brand-mark" aria-hidden="true">▶</div>
+        <div>
+          <h1>YouTube Ad &amp; Shorts Controls</h1>
+          <p class="subtitle">Unofficial, community-built controls.</p>
+        </div>
+      </div>
+
+      <section class="setting" aria-label="Ad helper setting">
+        <div class="setting-copy">
+          <span class="setting-title">Ad blocking</span>
+          <span id="status" class="status">Checking…</span>
+        </div>
+        <label class="switch">
+          <input id="enabled" type="checkbox" aria-label="Enable ad helper">
+          <span class="slider"></span>
+        </label>
+      </section>
+
+      <section class="setting" aria-label="Shorts setting">
+        <div class="setting-copy">
+          <span class="setting-title">Hide YouTube Shorts</span>
+          <span id="shorts-status" class="status">Checking…</span>
+        </div>
+        <label class="switch">
+          <input id="hide-shorts" type="checkbox" aria-label="Hide YouTube Shorts">
+          <span class="slider"></span>
+        </label>
+      </section>
+
+      <p class="note">Hides common ad placements and Shorts. YouTube changes may affect coverage or playback.</p>
+      <footer>Not affiliated with YouTube or Google. Only runs on youtube.com.</footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
